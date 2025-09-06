@@ -303,7 +303,7 @@ Esses modelos ajudam a garantir que os dados trocados entre frontend e backend t
 ## Subpasta Src
 A pasta **`src`** (source) reúne os módulos centrais de dados e inteligência do chatbot, funcionando como a base que alimenta o aplicativo; nela ficam componentes como o **`banco_de_dados`**, responsável pelo armazenamento e gerenciamento das informações; o **`rag`**, que implementa o método de **Retrieval-Augmented Generation** para conectar o modelo ao banco e garantir respostas contextualizadas; o **`scrap-dados`**, que contém scripts de coleta automatizada; e o **`scrapy`**, que utiliza o framework de web scraping para capturar e estruturar dados externos, assegurando que o chatbot tenha informações atualizadas, organizadas e acessíveis para gerar respostas inteligentes. 
 ### `Src/banco_de_dados`
-Por hora possui apenas um arquivo `.gitkeep` de marcador já que a pasta esta vazia. Por padrão, o Git não versiona pastas vazias. Então, quando você quer manter uma pasta no repositório mesmo sem arquivos ainda, você cria esse `.gitkeep`. ^gitkeep
+Por hora possui apenas um arquivo `.gitkeep` de marcador já que a pasta esta vazia. Por padrão, o Git não versiona pastas vazias. Então, quando você quer manter uma pasta no repositório mesmo sem arquivos ainda, você cria esse `.gitkeep`.
 ### `Src/rag`
 Aqui você deve ter reparado que  que essa pasta src/rag também está presente na pasta app, mas note que elas possuem uma diferença: 
 
@@ -317,10 +317,10 @@ Já os arquivos `querying.py` diferem porque, no nível global (`src/rag/queryin
 
 Em resumo, o `ingestion.py` é igual porque o processo de indexação não depende da aplicação, mas o `querying.py` varia justamente para se adequar ao modo como cada app consulta e utiliza os dados.
 ### `Src/scrap-dados
-A pasta `scrap-dados` reúne os componentes responsáveis por coletar e organizar informações externas para alimentar o chatbot, dentro de **`scrap-dados`** temos uma série de subpastas sendo elas as chamadas `links_download`, `paginas_txt`, `pdfs_baixados`, `pipe`, `txt_salvos` e dois arquivos chamados `html_to_txt.py`  e `main.py`. Onde nas pastas `pdfs_baixados`, `links_download` e `txt_salvos` possuímos apenas arquivos [[#^gitkeep]]. 
+A pasta `scrap-dados` reúne os componentes responsáveis por coletar e organizar informações externas para alimentar o chatbot, dentro de **`scrap-dados`** temos uma série de subpastas sendo elas as chamadas `links_download`, `paginas_txt`, `pdfs_baixados`, `pipe`, `txt_salvos` e dois arquivos chamados `html_to_txt.py`  e `main.py`. Onde nas pastas `pdfs_baixados`, `links_download` e `txt_salvos` possuímos apenas arquivos .gitkeep . 
 
 #### `paginas_txt
-A pasta possui apenas um [[#^gitkeep]] e um arquivo de texto com o conteúdo do Green Team Hacker Club que parece ser uma página institucional, descrevendo quem são, áreas de atuação, atividades etc. Esse texto vai ser processado pelo ingestion e buscado pelo querying caso alguma pergunta solicite essas informações. 
+A pasta possui apenas um .gitkeep e um arquivo de texto com o conteúdo do Green Team Hacker Club que parece ser uma página institucional, descrevendo quem são, áreas de atuação, atividades etc. Esse texto vai ser processado pelo ingestion e buscado pelo querying caso alguma pergunta solicite essas informações. 
 #### `pipe`
 Tem a função de organizar a etapa de coleta e transformação de dados que o chatbot vai usar depois. O nome _pipe_ sugere que ela é uma espécie de pipeline (sequência de passos) que pega dados crus da internet (links, PDFs, HTML) e transforma em arquivos `.txt` prontos para serem usados no treinamento ou consulta do chatbot. Nele temos os seguintes arquivos: 
 ##### `csv_links.py`
