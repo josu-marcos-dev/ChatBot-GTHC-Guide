@@ -1,6 +1,6 @@
 # 🤖 Bem-vindo ao Guia Completo do Projeto ChatBot - GTHC
 
-Seja bem-vindo ao **[[chatbot]]**, seu guia completo para entender e explorar todas as funcionalidades do nosso projeto de chatbot inteligente!  
+Seja bem-vindo ao **chatbot**, seu guia completo para entender e explorar todas as funcionalidades do nosso projeto de chatbot inteligente!  
 
 ---
 
