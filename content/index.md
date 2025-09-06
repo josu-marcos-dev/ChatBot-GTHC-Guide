@@ -1,17 +1,17 @@
 # 🤖 Bem-vindo ao Guia Completo do Projeto ChatBot - GTHC
 
-Seja bem-vindo ao **[[chatbot]]**, seu guia completo para entender e explorar todas as funcionalidades do nosso projeto de chatbot inteligente!  
+Seja bem-vindo ao **chatbot**, seu guia completo para entender e explorar todas as funcionalidades do nosso projeto de chatbot inteligente!  
 
 ---
 
 ## 🔹 Sobre o Projeto
 
-O **[[chatbot]] - GTHC** é uma aplicação projetada para **interagir de forma natural com usuários**, automatizando respostas, oferecendo suporte e criando experiências eficientes e inteligentes.  
+O **chatbot - GTHC** é uma aplicação projetada para **interagir de forma natural com usuários**, automatizando respostas, oferecendo suporte e criando experiências eficientes e inteligentes.  
 Nosso objetivo é entregar **um chatbot versátil e fácil de usar**, para os alunos da UFABC com conteúdos sobre a Universidade, buscando dinamizar o acesso a informação e conteúdos diversos
 
 ---
 
-Dentro do **[[chatbot]]**, a estrutura está organizada em **4 subitens principais**: as pastas `app`, `src`, `shared` e uma série de **9 arquivos de instrução**.  
+Dentro do **chatbot**, a estrutura está organizada em **4 subitens principais**: as pastas `app`, `src`, `shared` e uma série de **9 arquivos de instrução**.  
 
 O chatbot funciona como um **sistema integrado entre frontend, backend e motor RAG**:
 
@@ -36,7 +36,7 @@ Toda a infraestrutura de dados, incluindo carregamento de documentos, criação 
 O script de execução garante que dependências estejam instaladas e que o servidor Flask rode de forma fácil e organizada.
 
 ## Subpasta App
-Dentro da subpasta app temos uma série de outras 2 subpastas *app* e *src* e um arquivo __init__.py o qual serve apenas para identificar a pasta app como um pacote python, ele sempre estará presente em pastas com conteúdo em python e tem as seguintes funções: ^init-py
+Dentro da subpasta app temos uma série de outras 2 subpastas *app* e *src* e um arquivo __init__.py o qual serve apenas para identificar a pasta app como um pacote python, ele sempre estará presente em pastas com conteúdo em python e tem as seguintes funções: 
 
 - Garantir que o Python reconheça `app/app/` como um pacote.
 - Facilitar imports de módulos do app em outros lugares do projeto.
@@ -279,7 +279,7 @@ Esse script é um ponto de execução do chatbot que integra o Flask com o siste
 
 
 ### `App/src/rag` 
-Dentro do App/src temos a subpasta Rag e um arquivo [[#^init-py]]  ⟶ A pasta contém a lógica de suporte do sistema RAG, separada do Flask. Ela não lida diretamente com rotas ou frontend; em vez disso, cuida da ingestão de dados, ou seja, coleta de documentos, criação de índices vetoriais, persistência no disco (`ingestion.py`) e consultas e geração de respostas, ou seja, criação do motor de busca que o backend usa para responder perguntas (`querying.py`). ^src-rag
+Dentro do App/src temos a subpasta Rag e um arquivo init.py  ⟶ A pasta contém a lógica de suporte do sistema RAG, separada do Flask. Ela não lida diretamente com rotas ou frontend; em vez disso, cuida da ingestão de dados, ou seja, coleta de documentos, criação de índices vetoriais, persistência no disco (`ingestion.py`) e consultas e geração de respostas, ou seja, criação do motor de busca que o backend usa para responder perguntas (`querying.py`). ^src-rag
 ##### `ingestion.py`
 O arquivo `ingestion.py` é responsável por carregar, processar e organizar os documentos que o chatbot vai utilizar. Ele fornece funções para ler arquivos de um diretório, transformar o conteúdo em objetos de documento (`Document`), criar um índice vetorial a partir desses documentos e também carregar índices previamente salvos. Esse índice vetorial é fundamental para o sistema RAG, pois permite que o chatbot recupere informações relevantes de forma rápida e eficiente antes de gerar respostas.
 ##### `querying.py`
@@ -292,7 +292,7 @@ Em resumo, querying.py conecta o índice vetorial criado em ingestion.py com o b
 
 ## Subpasta Shared
 
-A pasta shared contém apenas 2 arquivos sendo eles um [[#^init-py]] e um **models.py** ⟶ O arquivo models define modelos de dados usados na comunicação do chatbot, utilizando a biblioteca Pydantic para validação e tipagem. 
+A pasta shared contém apenas 2 arquivos sendo eles um init.py e um **models.py** ⟶ O arquivo models define modelos de dados usados na comunicação do chatbot, utilizando a biblioteca Pydantic para validação e tipagem. 
 
 O modelo ChatRequest representa a estrutura da mensagem enviada pelo usuário, incluindo o prompt e um identificador opcional de conversa. Já o modelo ChatResponse define a estrutura da resposta retornada pelo chatbot, contendo o texto da resposta e uma lista de fontes relacionadas, caso existam. 
 
