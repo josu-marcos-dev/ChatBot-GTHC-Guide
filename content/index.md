@@ -279,7 +279,7 @@ Esse script é um ponto de execução do chatbot que integra o Flask com o siste
 
 
 ### `App/src/rag` 
-Dentro do App/src temos a subpasta Rag e um arquivo init.py  ⟶ A pasta contém a lógica de suporte do sistema RAG, separada do Flask. Ela não lida diretamente com rotas ou frontend; em vez disso, cuida da ingestão de dados, ou seja, coleta de documentos, criação de índices vetoriais, persistência no disco (`ingestion.py`) e consultas e geração de respostas, ou seja, criação do motor de busca que o backend usa para responder perguntas (`querying.py`). ^src-rag
+Dentro do App/src temos a subpasta Rag e um arquivo init.py  ⟶ A pasta contém a lógica de suporte do sistema RAG, separada do Flask. Ela não lida diretamente com rotas ou frontend; em vez disso, cuida da ingestão de dados, ou seja, coleta de documentos, criação de índices vetoriais, persistência no disco (`ingestion.py`) e consultas e geração de respostas, ou seja, criação do motor de busca que o backend usa para responder perguntas (`querying.py`). 
 ##### `ingestion.py`
 O arquivo `ingestion.py` é responsável por carregar, processar e organizar os documentos que o chatbot vai utilizar. Ele fornece funções para ler arquivos de um diretório, transformar o conteúdo em objetos de documento (`Document`), criar um índice vetorial a partir desses documentos e também carregar índices previamente salvos. Esse índice vetorial é fundamental para o sistema RAG, pois permite que o chatbot recupere informações relevantes de forma rápida e eficiente antes de gerar respostas.
 ##### `querying.py`
@@ -305,7 +305,7 @@ A pasta **`src`** (source) reúne os módulos centrais de dados e inteligência 
 ### `Src/banco_de_dados`
 Por hora possui apenas um arquivo `.gitkeep` de marcador já que a pasta esta vazia. Por padrão, o Git não versiona pastas vazias. Então, quando você quer manter uma pasta no repositório mesmo sem arquivos ainda, você cria esse `.gitkeep`. ^gitkeep
 ### `Src/rag`
-Aqui você deve ter reparado que  que essa pasta [[#^src-rag]] também está presente na pasta app, mas note que elas possuem uma diferença: 
+Aqui você deve ter reparado que  que essa pasta src/rag também está presente na pasta app, mas note que elas possuem uma diferença: 
 
 Temos dois níveis de RAG (Retrieval-Augmented Generation), um nível “global" (a `src/` geral), que cuida da infraestrutura de dados e define como o RAG funciona de forma centralizada; E um nível “aplicação” (a `src/` dentro de `app/`), que adapta esse RAG ao fluxo específico do chatbot, ou seja, como ele vai consultar e usar os dados dentro da conversa.
 
